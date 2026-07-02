@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Privacy Policy | Snuka Studio</title>
+    <meta name="description" content="Privacy Policy for Snuka Studio.">
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <main class="document">
+      <p class="eyebrow">Snuka Studio</p>
+      <h1>Privacy Policy</h1>
+      <p class="updated">Effective date: July 1, 2026</p>
+
+      <h2>Overview</h2>
+      <p>Snuka Studio creates AI vintage photo booth portrait packs from photos you choose. This policy explains what data we collect, why we use it, how long we keep it, and how you can request deletion.</p>
+
+      <h2>Data We Collect</h2>
+      <ul>
+        <li><strong>Portrait photos you select:</strong> source photos uploaded for portrait validation and AI generation.</li>
+        <li><strong>Generated portraits:</strong> preview and full-resolution outputs created from your request.</li>
+        <li><strong>User identifiers:</strong> anonymous Supabase user IDs and RevenueCat app user IDs used to own sessions and purchases.</li>
+        <li><strong>Purchase and entitlement data:</strong> purchase state needed to unlock full-resolution packs.</li>
+        <li><strong>Crash and performance diagnostics:</strong> Sentry diagnostics used to find startup, purchase, export, and generation failures.</li>
+      </ul>
+
+      <h2>How We Use Data</h2>
+      <p>We use your data to provide app functionality: validate portrait quality, create requested photo packs, show previews, unlock paid assets, process deletion requests, prevent abuse, and troubleshoot reliability issues.</p>
+
+      <h2>AI Processing</h2>
+      <p>Source portraits may be sent to OpenAI through our server-side worker for portrait validation and image generation. We do not use your portraits for advertising or cross-app tracking. We do not sell your portraits or generated images.</p>
+
+      <h2>Processors</h2>
+      <p>We use Supabase for authentication, database, Edge Functions, and private storage; OpenAI for AI validation and generation; RevenueCat for purchase and entitlement state; and Sentry for crash and performance diagnostics.</p>
+
+      <h2>Retention</h2>
+      <p>Source portraits are eligible for cleanup 24 hours after a terminal generation or deletion state. Generated assets are eligible for cleanup after 90 days. Users can also request session deletion in the app, which removes source rows, generated asset rows, and private storage objects when reachable.</p>
+
+      <h2>Security</h2>
+      <p>Source portraits and generated assets are stored in private buckets. The app uses signed upload and download URLs. Full-resolution asset URLs are issued only after server-side entitlement checks.</p>
+
+      <h2>Your Choices</h2>
+      <p>You can delete a session in the app. You can also request data deletion at <a href="/delete-data/">Delete Data</a> or by emailing <a href="mailto:privacy@snukastudio.com">privacy@snukastudio.com</a>.</p>
+
+      <h2>Children</h2>
+      <p>Snuka Studio is not directed to children under 13. Do not upload photos of another person unless you have the right and consent to do so.</p>
+
+      <h2>Contact</h2>
+      <p>For privacy questions, contact <a href="mailto:privacy@snukastudio.com">privacy@snukastudio.com</a>.</p>
+
+      <p class="back"><a href="/">Back to Snuka Studio</a></p>
+    </main>
+  </body>
+</html>
