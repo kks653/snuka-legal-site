@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="snuka-legal-contract-version" content="2026-07-19-v2">
     <title>Delete Data | Snuka Studio</title>
     <meta name="description" content="How to delete Snuka Studio data.">
     <link rel="stylesheet" href="../styles.css">
@@ -11,19 +12,24 @@
     <main class="document">
       <p class="eyebrow">Snuka Studio</p>
       <h1>Delete Data</h1>
-      <p class="updated">Effective date: July 1, 2026</p>
+      <p class="updated">Effective date: July 19, 2026</p>
 
-      <h2>Delete in the App</h2>
-      <p>The fastest way to delete a photo session is inside Snuka Studio. Open the session and use the delete action. This removes reachable source photo rows, generated asset rows, and private storage objects for that session.</p>
+      <h2>Delete One Photo Session</h2>
+      <p>Open the active or completed print pack and use the pack deletion control. This stops an active generation when necessary, removes the session's known source portraits and generated prints from private storage, and deletes generated asset rows and related safety reports.</p>
+      <p>For operational integrity, the session row, source-photo rows, and generation-job rows remain in Supabase with a deleted state and deletion timestamp. They are no longer available in the app and their private image files are removed. These deleted-state rows remain until you delete the account or they are removed through another database cleanup.</p>
 
-      <h2>Email Request</h2>
-      <p>If you cannot access the app, email <a href="mailto:privacy@snukastudio.com">privacy@snukastudio.com</a> from an address where we can follow up. Include the approximate date of the session and any purchase receipt reference if the request involves paid full-resolution assets.</p>
+      <h2>Delete the Account and All App Data</h2>
+      <p>Use the separate account deletion control in the app's top bar and confirm <strong>Delete account</strong>. This removes the anonymous Supabase Auth user, all user-facing session, source-photo, generation-job, generated-asset, entitlement, deletion-request, and safety-report rows, known private storage objects, and Snuka's stored purchase-event rows. A minimal non-image security tombstone containing raw identifiers and the signed-upload storage path remains only to catch an object recreated by a previously issued two-hour upload token. It is purged after token expiry and the next successful storage cleanup. The app then signs out and clears its saved booth session.</p>
+      <p>Deleting the Snuka account does not cancel or refund an App Store or Google Play purchase. App stores, RevenueCat, Sentry, OpenAI, or other processors may retain transaction, security, diagnostic, or processing records under their own retention rules or when required for accounting, disputes, security, or law.</p>
+
+      <h2>Request Deletion Without App Access</h2>
+      <p>If you cannot access the app, email <a href="mailto:privacy@snukastudio.com">privacy@snukastudio.com</a> from an address where we can follow up. State whether you want one session or the entire anonymous account deleted. Include the approximate session date and, only when needed to locate paid output, a purchase receipt reference. We may request limited verification before acting.</p>
 
       <h2>Automated Retention</h2>
-      <p>Source portraits are eligible for cleanup 24 hours after a terminal generation or deletion state. Generated assets are eligible for cleanup after 90 days. Production cleanup runs on a schedule.</p>
+      <p>Source portrait files are eligible for cleanup 24 hours after a terminal generation or deletion state; their database rows are marked deleted. Generated asset files and rows are eligible for cleanup after 90 days. Related safety reports are deleted with their generated asset row. The production retention workflow performs this automated cleanup only while its schedule is enabled; in-app session and account deletion do not wait for that schedule.</p>
 
       <h2>Limits</h2>
-      <p>Some records may be retained when required for security, purchase accounting, dispute handling, or legal compliance. We do not use this retained data for advertising or tracking.</p>
+      <p>Processor or transaction records may be retained when required for security, purchase accounting, dispute handling, or legal compliance. Session deletion intentionally retains the deleted-state operational rows described above; full account deletion removes user-facing Supabase rows while retaining the temporary upload security tombstone described above until its post-expiry cleanup succeeds. We do not use retained data for advertising or cross-app tracking.</p>
 
       <p class="back"><a href="../">Back to Snuka Studio</a></p>
     </main>
