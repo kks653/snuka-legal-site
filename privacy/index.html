@@ -24,7 +24,7 @@
         <li><strong>User identifiers:</strong> anonymous Supabase user IDs and RevenueCat app user IDs used to own sessions and purchases.</li>
         <li><strong>Purchase and entitlement data:</strong> purchase state needed to unlock full-resolution packs.</li>
         <li><strong>Safety reports:</strong> when you report a generated print, we collect your anonymous Supabase user ID, the generated asset and generation job references, a required reason (sexual content; hateful or harassing; violence or self-harm; privacy or identity; misleading or spam; or other unsafe content), optional details of up to 1,000 characters, report status, and submission time.</li>
-        <li><strong>Crash and performance diagnostics:</strong> Sentry diagnostics used to find startup, purchase, export, and generation failures.</li>
+        <li><strong>Crash and performance diagnostics:</strong> if enabled, Sentry diagnostics used to find startup, purchase, export, and generation failures.</li>
       </ul>
 
       <h2>How We Use Data</h2>
@@ -37,7 +37,7 @@
       <p>The in-app Report action lets you select one safety reason and optionally provide up to 1,000 characters of context. The report is a private request for operational review. Submitting it does not automatically classify, remove, block, or regenerate the reported print, and it does not promise a particular review outcome. Do not include unnecessary sensitive information in the optional details.</p>
 
       <h2>Processors</h2>
-      <p>We use Supabase for authentication, database, Edge Functions, and private storage; OpenAI for source portrait face validation; RevenueCat for purchase and entitlement state; and Sentry for crash and performance diagnostics.</p>
+      <p>We use Supabase for authentication, database, Edge Functions, and private storage; OpenAI for source portrait face validation; RevenueCat for purchase and entitlement state; and Sentry for crash and performance diagnostics when enabled.</p>
 
       <h2>Retention</h2>
       <p>Source portrait files are eligible for cleanup 24 hours after a terminal generation or deletion state. Generated asset files and rows are eligible for cleanup after 90 days. A safety report is linked to its generated asset row and is removed when that row is removed, including through session deletion, account deletion, or scheduled generated-asset cleanup.</p>
